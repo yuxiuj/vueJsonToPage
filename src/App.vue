@@ -1,43 +1,48 @@
 <template>
   <div class="editor-wrapper">
-    <codemirror :value="code" :options="editorOption" ref="myEditor" @change="changeCode"></codemirror>
+    <codemirror
+      :value="code"
+      :options="editorOption"
+      ref="myEditor"
+      @change="changeCode"
+    />
   </div>
 </template>
 
 <script>
-import { codemirror } from "vue-codemirror-lite";
-require("codemirror/mode/javascript/javascript");
-require("codemirror/mode/vue/vue");
-require("codemirror/addon/hint/show-hint.js");
-require("codemirror/addon/hint/show-hint.css");
-require("codemirror/addon/hint/javascript-hint.js");
+import { codemirror } from 'vue-codemirror-lite';
+require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/vue/vue');
+require('codemirror/addon/hint/show-hint.js');
+require('codemirror/addon/hint/show-hint.css');
+require('codemirror/addon/hint/javascript-hint.js');
 
 export default {
   data() {
     return {
-      code: "",
+      code: '',
       editorOption: {
-        mode: "javascript",
-        extraKeys: { "Ctrl-Space": "autocomplete" }
-      }
+        mode: 'javascript',
+        extraKeys: { 'Ctrl-Space': 'autocomplete' },
+      },
     };
   },
   components: {
-    codemirror
+    codemirror,
   },
   computed: {
     editor() {
       return this.$refs.myEditor.editor;
-    }
+    },
   },
   methods: {
     changeCode(value) {
       this.code = value;
-    }
+    },
   },
   mounted() {
     this.editor.focus();
-  }
+  },
 };
 </script>
 
