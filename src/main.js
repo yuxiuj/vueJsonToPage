@@ -8,3 +8,5 @@ Vue.use(ElementUI)
 new Vue({
   render: h => h(App),
 }).$mount('#app')
+
+console.log('test');
