@@ -5,8 +5,4 @@ import ElementUI from 'element-ui';
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app');
-
-console.log('test');
+new Vue({ render: h => h(App) }).$mount('#app');
