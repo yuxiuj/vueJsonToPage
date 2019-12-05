@@ -12,7 +12,6 @@ module.exports = {
   },
   plugins: ['prettier'], // eslint-plugin-vue eslint-plugin-prettier
   extends: [
-    'standard',
     'plugin:vue/base',
     'prettier' // eslint-config-prettier
   ],
